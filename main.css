@@ -1,6 +1,7 @@
 html { 
   margin: 0;
   padding: 0;
+cursor:url(images/tinkerbell.png), auto;
   background: url(images/turkkahve.jpg) no-repeat center center fixed; 
   -webkit-background-size: cover;
   -moz-background-size: cover;
@@ -18,8 +19,8 @@ html {
 .wel > span {
   font-family: 'Lobster Two', cursive;
   font-size: 76px;
-  color:#79ABFF;
-  text-shadow: 4px 4px 4px #F8ED7C;
+  color:#FFE50C;
+  text-shadow: 4px 4px 4px #CCCCCC;
   
 }
 h2{
@@ -33,5 +34,7 @@ h2 >a{
 }
 h2> a:hover{
   color:#79ABFF;
-  cursor: pointer;
+  text-decoration: none;
+/*  cursor: pointer;*/
+
 }
