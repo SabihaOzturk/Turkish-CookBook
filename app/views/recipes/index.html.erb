@@ -36,11 +36,38 @@
 
 <div class="col-sm-8" style="background-color:lavenderblush;">
   <div id="cook_receipes">
-  <img class="backbook" src="images/tahta2.jpg">
+  <img class="backbook">
     <div id="cook_content">
-      <img class="photos" src="images/adanakebab.jpg">
+      <img class="photos" src="/assets/adanakebab.jpg">
       <div class="cooking">
-        <h4>Ingredients:</h4>
+
+        <h1>Listing Recipes</h1>
+        <table>
+          <thead>
+            <tr>
+              <th>Title</th>
+              <th>Last Updated</th>
+              <th colspan="2">&nbsp;</th>
+            </tr>
+          </thead>
+
+          <% for recipe in @recipes %>
+            <tr>
+              <td><%= link_to h(recipe.title), recipe %></td>
+              <td><%= time_ago_in_words recipe.updated_at %> ago</td>
+          <!--     <td><%= recipe.instructions %></td>
+              <td><%= link_to 'Show', recipe %></td> -->
+              <td><%= link_to 'Edit', edit_recipe_path(recipe) %></td>
+              <td><%= link_to 'Destroy', recipe, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+            </tr>
+          <% end %>
+
+        </table>
+        <br>
+
+        <%= link_to 'New Recipe', new_recipe_path %>
+
+     <!--    <h4>Ingredients:</h4>
         <ul>
           <li>1 lb lean ground mutton</li>
           <li>50 gr fat from lamb tail, finely chopped</li>
@@ -52,10 +79,11 @@
         </ul>
         <h4>Preperation :</h4>
         <p>Leave the crushed red pepper in 1/2 cup of water <br>for about 2-3 hours, to get them softened. Then drain.</p>
-        <p>Mix all the ingredients with your hands.<br> Grab a fist size mixture and skewer it. <br>Squeeze it on the skewer until it gets smooth and <br>lengthens to acquire the shape shown in the picture.<br> Cook on a grill or oven. You can grill<br> some vegetables as well on the side. <br>Refrigerate the skewered Adana Kebab <br>overnight to get a better flavor.</p>
-      </div> <!-- end .left -->
-    </div> <!-- end #content -->
-  </div> <!-- end #receipes -->
+        <p>Mix all the ingredients with your hands.<br> Grab a fist size mixture and skewer it. <br>Squeeze it on the skewer until it gets smooth and <br>lengthens to acquire the shape shown in the picture.<br> Cook on a grill or oven. You can grill<br> some vegetables as well on the side. <br>Refrigerate the skewered Adana Kebab <br>overnight to get a better flavor.</p> -->
+
+      </div> <!-- end .cooking -->
+    </div> <!-- end #cook_content -->
+  </div> <!-- end #cook_receipes -->
 
 </div><!-- end colm-sm-8 --> 
 
@@ -85,32 +113,3 @@
 </div><!-- end container --> 
 
 
-
-<h1>Listing Recipes</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Last Updated</th>
-      <th colspan="2">&nbsp;</th>
-    </tr>
-  </thead>
-
-
-    <% for recipe in @recipes %>
-      <tr>
-        <td><%= link_to h(recipe.title), recipe %></td>
-        <td><%= time_ago_in_words recipe.updated_at %> ago</td>
-    <!--     <td><%= recipe.instructions %></td>
-        <td><%= link_to 'Show', recipe %></td> -->
-        <td><%= link_to 'Edit', edit_recipe_path(recipe) %></td>
-        <td><%= link_to 'Destroy', recipe, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-
-</table>
-
-<br>
-
-<%= link_to 'New Recipe', new_recipe_path %>
