@@ -1,5 +1,22 @@
 <!-- <h1>Pages#home</h1>
 <p>Find me in app/views/pages/home.html.erb</p> -->
 
-  <h1 class="wel">Welcome to <span>Magic Hands</span></h1>
-  <h2>I hope you enjoy it. Let's open the <%= link_to 'Book', recipes_path %></h2>
+<%= render 'layouts/navbar' %>
+
+<div class="landing-page">
+  <h1 class="wel"><span>Magic Hands</span></h1>
+    <h2 class="wel2">Spice up your kitchen with the taste of Turkey</h2>
+  <div class="welcome-button">
+    <%= link_to 'Enter Here', recipes_path, :class => "btn btn-danger btn-lg" %>
+  </div>
+</div>
+
+<script type="text/javascript">
+  $(function(){
+    $(".wel").hide()
+    $(".wel").fadeIn(3000);
+  });
+</script>
+
+
+

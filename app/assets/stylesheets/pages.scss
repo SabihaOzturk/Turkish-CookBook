@@ -1,22 +1,31 @@
 // Place all the styles related to the pages controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-body { 
+.landing-page { 
+ /* width: 100%;*/
   margin: 0;
   padding: 0;
-  cursor:url(tinkerbell.png), auto;
+  /*cursor:url(tinkerbell.png), auto;*/
   background: url(turkkahve.jpg) no-repeat center center fixed; 
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
+  height: 1000px;
+}
+
+.welcome-button{
+  margin-left: 50%;
 }
 
 .wel{
+  margin: auto;
+  z-index: 1;
   color:#fff;
   font-family: 'Gloria Hallelujah', cursive;
   font-size: 50px;
   text-align: center;
+  padding-top: 30px;
 }
 .wel > span {
   font-family: 'Lobster Two', cursive;
@@ -25,18 +34,30 @@ body {
   text-shadow: 4px 4px 4px #CCCCCC;
   
 }
-h2, a{
-  text-align: center;
+.wel2 {
   color: #fff;
   font-size: 28px;
-
+  text-align: center;
 }
-/*h2 >a{
-  color: #fff;
-}*/
-h2> a:hover{
+.wel2 >a{
+  text-align: center;
+  color:#FFE50C;
+  text-shadow: 4px 4px 4px #CCCCCC;
+  font-size: 36px;
+}
+.wel2 >a:hover{
   color:#79ABFF;
   text-decoration: none;
   /*cursor: pointer;*/
+}
+.carousel-inner .item {
+    overflow: hidden;
+    max-width: 100%;
+    margin: 0;
+}
 
+.carousel-inner >.item >img {
+    width: 20%;
+    height: 20%;
+    margin: 0 auto;
 }
