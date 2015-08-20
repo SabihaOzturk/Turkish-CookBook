@@ -1,0 +1,42 @@
+// Place all the styles related to the pages controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+body { 
+  margin: 0;
+  padding: 0;
+  cursor:url(tinkerbell.png), auto;
+  background: url(turkkahve.jpg) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+.wel{
+  color:#fff;
+  font-family: 'Gloria Hallelujah', cursive;
+  font-size: 50px;
+  text-align: center;
+}
+.wel > span {
+  font-family: 'Lobster Two', cursive;
+  font-size: 76px;
+  color:#FFE50C;
+  text-shadow: 4px 4px 4px #CCCCCC;
+  
+}
+h2, a{
+  text-align: center;
+  color: #fff;
+  font-size: 28px;
+
+}
+/*h2 >a{
+  color: #fff;
+}*/
+h2> a:hover{
+  color:#79ABFF;
+  text-decoration: none;
+  /*cursor: pointer;*/
+
+}

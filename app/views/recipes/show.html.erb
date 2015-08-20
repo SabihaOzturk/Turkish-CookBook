@@ -1,0 +1,14 @@
+<h2><%=h @recipe.title %> [ <%= link_to 'Edit', edit_recipe_path(@recipe) %>] </h2>
+
+<p>
+  <strong>Ingredients:</strong>
+  <%=h @recipe.ingredients %>
+</p>
+
+<p>
+  <strong>Instructions:</strong>
+  <%=h @recipe.instructions %>
+</p>
+
+ 
+<%= link_to 'Back', recipes_path %>
