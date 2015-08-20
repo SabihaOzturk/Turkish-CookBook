@@ -1,0 +1,37 @@
+// Place all the styles related to the recipes controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+.carousel-inner .item {
+    overflow: hidden;
+    max-width: 100%;
+    margin: 0;
+}
+
+.carousel-inner >.item >img {
+    width: 20%;
+    height: 20%;
+    margin: 0 auto;
+}
+.backbook {
+  min-width: 100%;
+  max-height: 100%;
+  margin: 0 ;
+  padding: 0;
+  z-index: -999;
+}
+.photos{
+  margin-left: 56%;
+  margin-top: -95%;
+  width: 20%;
+  transform: rotate(350deg);
+  z-index: 1;
+}
+.cooking {
+  width: 50%;
+  margin-left: 27%;
+  margin-top: -52%;
+  transform: rotate(350deg);
+  z-index: 1;
+}
