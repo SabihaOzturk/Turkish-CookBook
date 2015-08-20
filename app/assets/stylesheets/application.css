@@ -13,15 +13,14 @@
  *= require_tree .
  *= require_self
  */
-body{
-  cursor:url(rosecursor.png), auto;
-}
+
 .navbar-inverse .navbar-brand{
   font-family: 'Lobster Two', cursive;
   font-size: 36px;
   color:#FFE50C;
-  text-shadow: 3px 3px 3px #CCCCCC;
+  /*text-shadow: 3px 3px 3px #CCCCCC;*/
 }
 .navbar{
   margin-bottom: 0px;
+  border-radius: 0px;
 }
