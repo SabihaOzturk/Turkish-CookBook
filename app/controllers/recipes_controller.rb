@@ -6,7 +6,7 @@ class RecipesController < ApplicationController
   end
 
   def show
-    @recipe = Recipe.find {params[:id]}
+    @recipe = Recipe.find params[:id]
   end
 
   # GET /recipes/new
@@ -16,7 +16,7 @@ class RecipesController < ApplicationController
 
   # GET /recipes/1/edit
   def edit
-     @recipe = Recipe.find {params[:id]}
+     @recipe = Recipe.find params[:id]
   end
 
   # POST /recipes
