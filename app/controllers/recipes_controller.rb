@@ -9,6 +9,10 @@ class RecipesController < ApplicationController
     @recipe = Recipe.find params[:id]
   end
 
+  def list
+    @recipes = Recipe.find params[:id]
+  end
+
   # GET /recipes/new
   def new
     @recipe = Recipe.new
@@ -16,7 +20,7 @@ class RecipesController < ApplicationController
 
   # GET /recipes/1/edit
   def edit
-     @recipe = Recipe.find params[:id]
+     @recipe = Recipe.find (@params[:id])    
   end
 
   # POST /recipes
