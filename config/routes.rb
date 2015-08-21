@@ -1,5 +1,12 @@
 Rails.application.routes.draw do
+  # get 'categories/new'
+
+  # get 'categories/edit'
+
+  # get 'categories/show'
+
   resources :recipes
+  resources :categories
 
    root to: "pages#home"
    get "pages/about"
