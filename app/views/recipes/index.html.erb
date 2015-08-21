@@ -46,6 +46,7 @@
         <table>
           <thead>
             <tr>
+              <th>Category</th>
               <th>Title</th>
               <th>Last Updated</th>
               <th colspan="2">&nbsp;</th>
@@ -54,6 +55,7 @@
 
           <% for recipe in @recipes %>
             <tr>
+              <td><%= link_to h(recipe.category.name) if recipe.category %>
               <td><%= link_to h(recipe.title), recipe %></td>
               <td><%= time_ago_in_words recipe.updated_at %> ago</td>
        

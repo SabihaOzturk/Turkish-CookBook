@@ -1,15 +1,15 @@
 class CategoriesController < ApplicationController
-   def index
+  def index
     @categories = Category.all
   end
 
   def new
-    @category = Category.new
+  @category = Category.new
   end
 
   def create
-   Category.create(params["category"])
-   redirect_to(categories_path)
+   Category.create category_params
+   redirect_to categories_path
   end
 
   def show
@@ -18,7 +18,7 @@ class CategoriesController < ApplicationController
 
   def destroy
     Category.find(params[:id]).destroy
-    redirect_to(categories_path)
+    redirect_to categories_path
   end
 
   def edit
@@ -27,9 +27,13 @@ class CategoriesController < ApplicationController
 
   def update
     category = Category.find(params[:id])
-    category.update_attributes(params[:category])
-    redirect_to(categories_path)
+    category.update category_params
+    redirect_to categories_path
   end
 
-end
+  private
 
+  def category_params
+    params.require(:category).permit(:name)
+  end
+end
