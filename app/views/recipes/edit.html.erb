@@ -1,6 +1,108 @@
-<h1>Editing Recipe</h1>
+ <div class="input-form">
+  <% if @recipe.errors.any? %>
+    <ul>
+      <% @recipe.errors.full_messages.each do |msg| %>
+        <li> <%= msg %> </li>
+      <% end %>
+    </ul>
+  <% end %>
 
-<%= render 'form' %>
+  <%= form_for @recipe, url: recipe_path, html: {method: :patch, multipart: true } do |f| %>
 
-<%= link_to 'Show', @recipe %>  |
-<%= link_to 'Back', recipes_path %>
+  <div class="row">
+    <span class="col-md-12 text-center">
+    <span class="title-head">Editing: <%= @recipe.title %></span>
+  </div><br>
+
+  <div class="row">
+    <span class="col-md-12 text-center">
+        <%= f.label 'recipe Image:' %>
+    </span>
+  </div>
+
+  <div class="row">
+    <span class="col-md-12 text-center">
+      <%= image_tag @recipe.image.url(:small) %>
+    </span>
+  </div>
+  <hr>
+
+  <div class="form-group">
+
+    <div class="row">
+      <span class="col-md-4"></span>
+      <span class="col-md-2">
+        <%= f.label :Image %>
+      </span>
+      <span class="col-md-2 text-center">
+       <%= f.file_field :image %>
+      </span>
+      <span class="col-md-4"></span>
+    </div>
+    <br>
+
+    <div class="row">
+      <span class="col-md-4"></span>
+      <span class="col-md-2"> 
+        <%= f.label 'Category:' %>
+      </span>
+      <span class="col-md-2">   
+      <%= f.select :category_id, options_from_collection_for_select(Category.all, 'id', 'name') %>     
+      </span>
+      <span class="col-md-4"></span>
+    </div>
+    <br>
+
+    <div class="row">
+      <span class="col-md-4"></span>
+      <span class="col-md-2">
+        <%= f.label 'Recipe Name:' %>
+      </span>
+      <span class="col-md-2">
+        <%= f.text_field :title, placeholder: 'Recipe Name' %>
+      </span>
+      <span class="col-md-4"></span>
+    </div>
+    <br>
+
+    <div class="row">
+      <span class="col-md-4"></span>
+      <span class="col-md-2"> 
+        <%= f.label 'Ingredients:' %>
+      </span>
+      <span class="col-md-2">    
+        <%= f.text_area :ingredients, placeholder: 'Ingredients' %>
+      </span>
+      <span class="col-md-4"></span>
+    </div>
+    <br>
+
+    <div class="row">
+      <span class="col-md-4"></span>
+      <span class="col-md-2">
+        <%= f.label 'Instructions:' %>
+      </span>
+      <span class="col-md-2">
+        <%= f.text_area :instructions, placeholder: 'Instructions' %>
+      </span>
+      <span class="col-md-4"></span>
+    </div>
+    <br>
+   
+  </div>
+
+    <div class="row">
+      <span class="col-md-4"></span>
+      <span class="col-md-4 text-center">
+        <div class="buttons_div">
+          <%= f.submit :Update %> <%= button_tag "Cancel", type: :cancel %>
+        </div>
+      </span>
+      <span class="col-md-4"></span>
+    </div>
+
+  <% end %>
+
+</div>
+
+
