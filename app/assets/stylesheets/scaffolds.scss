@@ -1,9 +1,10 @@
-/*body {
+body {
   background-color: #fff;
   color: #333;
   font-family: verdana, arial, helvetica, sans-serif;
   font-size: 13px;
   line-height: 18px;
+  margin-left: 5%;
 }
 
 p, ol, ul, td {
@@ -11,7 +12,9 @@ p, ol, ul, td {
   font-size: 13px;
   line-height: 18px;
 }
-
+th{
+  padding: 20px;
+}
 pre {
   background-color: #eee;
   padding: 10px;
@@ -34,6 +37,7 @@ a {
 div {
   &.field, &.actions {
     margin-bottom: 10px;
+
   }
 }
 
@@ -71,4 +75,3 @@ div {
     list-style: square;
   }
 }
-*/
