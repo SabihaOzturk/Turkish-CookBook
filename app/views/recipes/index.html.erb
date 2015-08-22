@@ -6,60 +6,51 @@
     <div class="col-sm-2" style="background-color:lavender;">
 
     <h4 class="category">CATEGORIES</h4><hr>
-    <div id="content">
-
-      <div id="category1">
-          <ul id="posts">
-              <li>post1</li>
-              <li>post2</li>
-              <li>post3</li>
-          </ul><!-- #posts -->
-      </div><!-- #category1 -->
-
-      <div id="category2">
-        <div id="sub-category1">
-          <ul id="posts">
-              <li>post4</li>
-              <li>post5</li>
-              <li>post6</li>
-          </ul><!-- #posts -->
-        </div><!-- #sub-category1 -->
-        <div id="sub-category2">
-          <ul id="posts">
-              <li>post7</li>
-              <li>post8</li>
-              <li>post9</li>
-          </ul><!-- #posts -->
-        </div><!-- #sub-category2 -->
-      </div><!-- #category2 -->
-    </div><!-- #content -->
+    <div id="cat_content">
+      <ul id="posts">
+          <li>post1</li>
+          <li>post2</li>
+          <li>post3</li>
+          <li>post4</li>
+          <li>post5</li>
+          <li>post6</li>
+          <li>post7</li>
+          <li>post8</li>
+          <li>post9</li>
+      </ul><!-- #posts -->
+    </div><!-- #cat_content -->
  </div><!-- end colm-sm-2 -->  
 
 <div class="col-sm-8" style="background-color:lavenderblush;">
   <div id="cook_receipes">
-  <img class="backbook">
+
     <div id="cook_content">
-      <img class="photos" src="/assets/adanakebab.jpg">
+    
       <div class="cooking">
 
         <h1>Listing Recipes</h1>
         <table>
           <thead>
             <tr>
+              <th>Photos</th>
               <th>Category</th>
               <th>Title</th>
               <th>Last Updated</th>
               <th colspan="2">&nbsp;</th>
             </tr>
           </thead>
-
-          <% for recipe in @recipes %>
-            <tr>
-              <td><%= link_to h(recipe.category.name) if recipe.category %>
+          <tr>
+            <% for recipe in @recipes %>
+         
+              <td><%= link_to recipe_path recipe do %>
+                <%= image_tag recipe.image.url(:small) %>
+                <% end %>
+              </td>
+              <td><%= link_to h(recipe.category.name) if recipe.category %></td>
               <td><%= link_to h(recipe.title), recipe %></td>
               <td><%= time_ago_in_words recipe.updated_at %> ago</td>
        
-              <!-- <td><%= link_to 'Show', recipe %></td> -->
+              <td><%= link_to 'Show', recipe %></td>
               <td><%= link_to 'Edit', edit_recipe_path(recipe) %></td>
               <td><%= link_to 'Destroy', recipe, method: :delete, data: { confirm: 'Are you sure?' } %></td>
             </tr>
@@ -68,7 +59,7 @@
         </table>
         <br>
 
-        <%= link_to 'New Recipe', new_recipe_path %>
+        <%= link_to 'New Recipe', new_recipe_path, :class => "btn btn-danger btn-lg" %>
 
       </div> <!-- end .cooking -->
     </div> <!-- end #cook_content -->

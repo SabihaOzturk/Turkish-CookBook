@@ -1,23 +1,37 @@
-<h2><%=h @recipe.title %> [ <%= link_to 'Edit', edit_recipe_path(@recipe) %>] </h2>
-<p>
-  <strong>Category:</strong>
-  <%=h @recipe.category.name %>
-</p>
+<%= form_for @recipe, url: recipes_path, html: {method: :get, multipart: true } do |f| %>
 
-<p>
-  <strong></strong>
-  <%= image_tag @recipe.image.url %>
-</p>
+<div class="row">
+  <span class="col-md-12 text-center title-head">
+   <h2><%=h @recipe.title %> [ <%= link_to 'Edit', edit_recipe_path(@recipe) %>] </h2>
+  </span>
+</div>
 
-<p>
-  <strong>Ingredients:</strong>
-  <%=h @recipe.ingredients %>
-</p>
+<div class="row">
+  <span class="col-md-12 text-center">
+  <h3>Category:
+  <%=h @recipe.category.name %></h3></span>
+</div>
 
-<p>
-  <strong>Instructions:</strong>
-  <%=h @recipe.instructions %>
-</p>
+<div class="row">
+  <span class="col-md-4 text-center">
+  <%= image_tag @recipe.image.url (:medium)%></span>
 
- 
-<%= link_to 'Back', recipes_path %>
+  <span class="col-md-4 text-center">
+  <h4>Ingredients:</h4>
+  <%=f.text_area :ingredients, readonly: true%></span>
+</div>
+
+<div class="row">
+  <span class="col-md-2"></span>
+  <span class="col-md-8 text-center">
+  <h4>Instructions:</h4>
+  <%=f.text_area :instructions, readonly: true%></span> 
+  <span class="col-md-2"></span>
+</div>
+
+<div class="row">
+  <span class="col-md-12 text-center">
+  <%= link_to 'Back', recipes_path, :class => "btn btn-danger btn-lg" %></span>
+</div>
+
+<% end %>

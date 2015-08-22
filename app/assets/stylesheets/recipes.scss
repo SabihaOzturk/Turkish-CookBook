@@ -2,17 +2,19 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.photos{
-/*  margin-left: 56%;
-  margin-top: -95%;*/
-  width: 20%;
-/*  transform: rotate(350deg);*/
-  z-index: 1;
+
+.cooking th, td {
+  padding: 10px;
 }
-.cooking {
-  width: 50%;
-/*  margin-left: 27%;
-  margin-top: -52%;*/
- /* transform: rotate(350deg);*/
-  z-index: 1;
+#recipe_ingredients {
+  width: 100%; 
+  height: 200px;
+  padding: 5px;
+  text-align: center;
+}
+#recipe_instructions {
+  width: 100%; 
+  height: 200px;
+  padding: 5px;
+  text-align: justify;
 }
