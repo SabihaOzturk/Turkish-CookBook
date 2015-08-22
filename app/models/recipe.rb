@@ -1,8 +1,11 @@
 class Recipe < ActiveRecord::Base
-  validates_presence_of :title, :ingredients, :instructions
+
   belongs_to :category
 
   validates :image, presence: true
+  validates :title, presence: true
+  validates :ingredients, presence: true
+  validates :instructions, presence: true
 
   
   has_attached_file :image, styles: { large: "600x600>", medium: "300x300>", small: "150x150>"}, 
