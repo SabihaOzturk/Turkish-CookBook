@@ -1,12 +1,11 @@
- <div class="input-form">
+<div class="input-form">
   <% if @recipe.errors.any? %>
-    <ul>
-      <% @recipe.errors.full_messages.each do |msg| %>
-        <li> <%= msg %> </li>
-      <% end %>
-    </ul>
-  <% end %>
-
+  <ul>
+    <% @recipe.errors.full_messages.each do |msg| %>
+      <li> <%= msg %> </li>
+    <% end %>
+  </ul>
+<% end %>
   <%= form_for @recipe, url: recipe_path, html: {method: :patch, multipart: true } do |f| %>
 
   <div class="row">
