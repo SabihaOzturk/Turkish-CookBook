@@ -56,7 +56,7 @@ class RecipesController < ApplicationController
 
   def check_for_cancel
     if params[:button]
-      redirect_to products_path
+      redirect_to recipes_path
     end
   end
 
