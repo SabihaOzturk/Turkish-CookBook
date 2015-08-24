@@ -1,9 +1,19 @@
-<%= render 'layouts/navbar' %>
-
 <div class="gridcontainer">
      
   <div class="row">
-    <div class="col-sm-2" style="background-color:lavender;">
+    <div class="col-sm-2 text-center">
+
+      <div id="search">
+        <%= form_tag recipes_path, :method => 'get' do %>
+        
+        <p> 
+          <%= text_field_tag :search, params[:search] %>
+          <%= submit_tag "Search", :title => nil %>
+        </p>
+        <% end %> 
+
+      </div>
+<hr>
 
     <h4 class="category">CATEGORIES</h4><hr>
     <div id="cat_content">
@@ -21,7 +31,7 @@
     </div><!-- #cat_content -->
  </div><!-- end colm-sm-2 -->  
 
-<div class="col-sm-8" style="background-color:lavenderblush;">
+<div class="col-sm-8 text-center" >
 
 <!-- <div id ="turnpage">
 <div id="flipbook">
@@ -67,7 +77,7 @@ $("#flipbook").turn({
                 <%= image_tag recipe.image.url(:small) %>
                 <% end %>
               </td>
-              <td><%= link_to h(recipe.category.name) if recipe.category %></td>
+              <td><%= recipe.category.name if recipe.category %></td>
               <td><%= link_to h(recipe.title), recipe %></td>
               <td><%= time_ago_in_words recipe.updated_at %> ago</td>
        
@@ -88,7 +98,7 @@ $("#flipbook").turn({
 
 </div><!-- end colm-sm-8 --> 
 
-<div class="col-sm-2" style="background-color:lavender;">
+<div class="col-sm-2 text-center" >
 
   <div id="translation">
     <h5 class="title">Translate</h5>

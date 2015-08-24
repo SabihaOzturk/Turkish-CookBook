@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  devise_for :users
+  
   # get 'categories/new'
 
   # get 'categories/edit'
@@ -12,6 +12,7 @@ Rails.application.routes.draw do
    root to: "pages#home"
    get "pages/about"
    
+   devise_for :users
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

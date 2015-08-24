@@ -13,4 +13,12 @@ class Recipe < ActiveRecord::Base
                     :path => ":rails_root/public/assets/:id/:style/:basename.:extension"
   validates_attachment_content_type :image, content_type: /\Aimage\/.*\Z/
   
+  def self.search(search)
+    if search
+      #Recipe.find(:all, :conditions => ['title LIKE ?', "%#{search}%"])
+      Recipe.where('title LIKE ?', "%#{search}%")
+    else
+      Recipe.all
+    end
+  end
 end
