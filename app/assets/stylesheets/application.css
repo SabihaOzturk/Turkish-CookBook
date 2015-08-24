@@ -24,3 +24,17 @@
   margin-bottom: 0px;
   border-radius: 0px;
 }
+
+.login-container {
+  padding: 30px;
+  border: 3px solid black;
+  border-radius: 10px;
+   margin-top: 5%;
+}
+
+
+.title-head {
+  font-size: 2em;
+  font-weight: bolder;
+  text-align: center;
+}
