@@ -8,6 +8,7 @@
   <% @recipes.each do |recipe| %>
   <tr>
   <td><%= link_to recipe.title, :action => "show", :id => recipe.id %></td>
+  <td><%= link_to recipe.category.name, :action => "show", :id => category.id %></td>
   <td><%= recipe.updated_at %></td>
   </tr>
   <% end %> 

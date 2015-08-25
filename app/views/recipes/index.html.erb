@@ -1,34 +1,68 @@
 <div class="gridcontainer">
      
-  <div class="col-sm-8 text-center" >
-    <div id="cook_receipes">
+  <div class="row">
+    <div class="col-sm-2 text-center">
+
+      <div id="search">
+        <%= form_tag recipes_path, :method => 'get' do %>
+        
+        <p> 
+          <%= text_field_tag :search, params[:search] %>
+          <%= submit_tag "Search", :title => nil %>
+        </p>
+        <% end %> 
+
+      </div>
+<hr>
+
+    <h4 class="category">CATEGORIES</h4><hr>
+    <div id="cat_content">
+      <ul id="categories">
+        <% @categories.each do |category| %>
+        
+        <li><%= link_to(category.name, category_path(category.id)) %></li>
+        <% end %>
+
+      </ul><!-- #categories -->
+    </div><!-- #cat_content -->
+ </div><!-- end colm-sm-2 -->  
+
+<div class="col-sm-8 text-center" >
+
+  <div id="cook_receipes">
+
+    <div id="cook_content">
+    
       <div class="cooking">
-        <h1>Listing Recipes</h1>
+
+
+        <div class="panel panel-primary">
+          <h1>Listing Recipes</h1></div>
         <table class='table'>
           <thead>
             <tr>
-              <td><strong>Photos</strong></td>
-              <td><strong>Category</strong></td>
-              <td><strong>Title</strong></td>
-              <td><strong>Last Updated</strong></td>
-            <!--   <td colspan="2">&nbsp;</td> -->
+              <th>Photos</th>
+              <th>Category</th>
+              <th>Title</th>
+              <th>Last Updated</th>
+              <th colspan="2">&nbsp;</th>
             </tr>
           </thead>
           <tr>
             <% for recipe in @recipes %>
-            <td>
-              <%= link_to recipe_path recipe do %>
-              <%= image_tag recipe.image.url(:small) %>
-              <% end %>
-            </td>
-            <td><%= recipe.category.name if recipe.category %></td>
-            <td><%= link_to h(recipe.title), recipe %></td>
-            <td><%= time_ago_in_words recipe.updated_at %> ago</td>
+         
+              <td><%= link_to recipe_path recipe do %>
+                <%= image_tag recipe.image.url(:small) %>
+                <% end %>
+              </td>
+              <td><%= recipe.category.name if recipe.category %></td>
+              <td><%= link_to h(recipe.title), recipe %></td>
+              <td><%= time_ago_in_words recipe.updated_at %> ago</td>
        
-            <td><%= link_to 'Show', recipe %></td>
-            <td><%= link_to 'Edit', edit_recipe_path(recipe) %></td>
-            <td><%= link_to 'Destroy', recipe, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-          </tr>
+              <td><%= link_to 'Show', recipe %></td>
+              <td><%= link_to 'Edit', edit_recipe_path(recipe) %></td>
+              <td><%= link_to 'Destroy', recipe, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+            </tr>
           <% end %>
 
         </table>
@@ -37,10 +71,34 @@
         <%= link_to 'New Recipe', new_recipe_path, :class => "btn btn-danger btn-lg" %>
 
       </div> <!-- end .cooking -->
-    </div> <!-- end #cook_receipes -->
-  </div><!-- end colm-sm-8 --> 
+    </div> <!-- end #cook_content -->
+  </div> <!-- end #cook_receipes -->
 
+</div><!-- end colm-sm-8 --> 
 
+<div class="col-sm-2 text-center" >
+
+  <div id="translation">
+    <h5 class="title">Translate</h5>
+    <div id="google_translate_element"></div>
+    <script type="text/javascript">
+    function googleTranslateElementInit(){
+      new google.translate.TranslateElement({pageLanguage: 'en', layout: google.translate.TranslateElement.FloatPosition.TOP_RIGHT}, 'google_translate_element');
+    }
+    </script>
+    <script type="text/javascript" src="http://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+    <div>
+      <span style="white-space:nowrap">Powered by <a class="goog-logo-link" href="https://translate.google.com" target="_blank"><img src="https://www.google.com/images/logos/google_logo_41.png" width="37px" height="13px" style="padding-right: 3px">Translate</a></span>
+    </div>
+  </div>  
+
+  <br><hr>
+  <div class="fjit">
+    <a href="http://feedjit.com/ir1/06bc5c49faf71594360150785f8758c0/"><img src="http://feedjit.com/b/06bc5c49faf71594360150785f8758c0.png" alt="" border="0" ISMAP /></a>
+  </div>
+</div><!-- end second-colm-sm-2 --> 
+
+  </div><!-- end row --> 
 </div><!-- end container --> 
 
 
