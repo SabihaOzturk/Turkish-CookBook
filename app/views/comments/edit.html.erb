@@ -1,0 +1,21 @@
+
+<h1>Editing comment</h1>
+
+<% form_for([@recipe, @comment]) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :commenter %><br />
+    <%= f.text_area :commenter %>
+  </p>
+  <p>
+    <%= f.label :body %><br />
+    <%= f.text_area :body %>
+  </p>
+  <p>
+    <%= f.submit "Update" %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', recipe_comment_path(@recipe, @comment) %> |
+<%= link_to 'Back', recipe_comments_path(@recipe) %>

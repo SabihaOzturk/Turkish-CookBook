@@ -1,5 +1,13 @@
 Rails.application.routes.draw do
-  
+  get 'comments/index'
+
+  get 'comments/show'
+
+  get 'comments/new'
+
+  get 'comments/edit'
+
+  devise_for :users
   # get 'categories/new'
 
   # get 'categories/edit'
@@ -9,8 +17,10 @@ Rails.application.routes.draw do
  # resources :recipes 
 
   resources :recipes do
+    resources :comments
      get 'list', :on => :collection 
-end
+  end
+  
 
   resources :categories
     
@@ -18,7 +28,8 @@ end
    root to: "pages#home"
    get "pages/about"
    
-   devise_for :users
+  # map.resources :recipes, :has_many => :comments
+  
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
