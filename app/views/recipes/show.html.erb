@@ -37,7 +37,15 @@
 <% end %>
 <nav>
   <ul class="pager">
-    <li class="previous"><a href="#"><span aria-hidden="true">&larr;</span> Older</a></li>
-    <li class="next"><a href="#">Newer <span aria-hidden="true">&rarr;</span></a></li>
+    <li class="previous" style="color:red">
+      <%= link_to recipe_path(@previous_recipe) do %>
+        <span aria-hidden="true">&larr; Older</span>
+      <% end %>
+    </li>
+    <li class="next">
+      <%= link_to recipe_path(@next_recipe) do %>
+        <span aria-hidden="true">Newer &rarr; </span>
+      <% end %>
+    </li>
   </ul>
 </nav>
