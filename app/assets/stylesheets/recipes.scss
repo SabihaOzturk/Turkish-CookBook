@@ -35,3 +35,11 @@
 #categories{
   list-style: none;
 }
+.pager >li>a {
+  color: #fff;
+  background-color: #d9534f;
+}
+.pager >li> a:hover{
+  border-color: #d43f3a;
+  color: #000;
+}
