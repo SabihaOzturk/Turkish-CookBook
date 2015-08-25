@@ -1,4 +1,18 @@
+<br>
+<br>
+<div class="row">
+<div class="col-sm-2 text-center" >
+
 <p><%= @category.name %></p>
+</div>
 
+<div class="col-sm-4 text-center" >
+<p><%= link_to('Edit', edit_category_path(@category.id), :class => "btn btn-primary btn-md") %> 
+  <%= link_to('Delete', category_path(@category.id), :method => :delete, :class => "btn btn-primary btn-md") %>
+  <%= link_to('New Category',new_category_path, :class => "btn btn-success btn-md") %>
+  <%= link_to('Home Page' ,recipes_path, :class => "btn btn-danger btn-md") %>
+ </p>
 
-<p><%= link_to('Edit', edit_category_path(@category.id)) %> <%= link_to('Delete', category_path(@category.id), :method => :delete) %></p>
+  </div>
+
+</div>
