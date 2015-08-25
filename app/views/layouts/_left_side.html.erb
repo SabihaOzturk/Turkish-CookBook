@@ -1,0 +1,26 @@
+<div class="col-sm-2 text-center">
+
+  <div id="search">
+    <%= form_tag recipes_path, :method => 'get' do %>
+    
+    <p> 
+      <%= text_field_tag :search, params[:search] %>
+      <%= submit_tag "Search", :title => nil %>
+    </p>
+    <% end %> 
+
+  </div>
+  <hr>
+  <div id="cat_content">
+  <h2>CATEGORIES</h2>
+  <hr>
+  
+    <ul id="categories">
+      <% @categories.each do |category| %>
+      
+      <li><%= link_to(category.name, category_path(category.id)) %></li>
+      <% end %>
+
+    </ul><!-- #categories -->
+  </div><!-- #cat_content -->
+</div><!-- end colm-sm-2 --> 

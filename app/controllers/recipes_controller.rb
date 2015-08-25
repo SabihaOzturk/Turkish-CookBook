@@ -4,14 +4,16 @@ class RecipesController < ApplicationController
   def index
     # @recipes = Recipe.all
     @recipes = Recipe.search params[:search]
+    @categories = Category.all
   end
 
   def show
     @recipe = Recipe.find params[:id]
+    @categories = Category.all
   end
 
   def list
-    @recipes = Recipe.find params[:id]
+    @recipes = Recipe.all
   end
 
   def new
@@ -19,7 +21,8 @@ class RecipesController < ApplicationController
   end
 
   def edit
-     @recipe = Recipe.find params[:id]    
+     @recipe = Recipe.find params[:id]
+     @categories = Category.all     
   end
 
   def create
