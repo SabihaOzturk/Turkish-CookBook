@@ -6,8 +6,14 @@ Rails.application.routes.draw do
 
   # get 'categories/show'
 
-  resources :recipes
+ # resources :recipes 
+
+  resources :recipes do
+     get 'list', :on => :collection 
+end
+
   resources :categories
+    
 
    root to: "pages#home"
    get "pages/about"

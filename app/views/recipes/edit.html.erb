@@ -8,83 +8,83 @@
 <% end %>
   <%= form_for @recipe, url: recipe_path, html: {method: :patch, multipart: true } do |f| %>
 
-  <div class="row">
-    <span class="col-md-12 text-center">
+  
+  <!-- <div class="row"> -->
+    <span class="col-md-8 text-center">
     <span class="title-head">Editing: <%= @recipe.title %></span>
-  </div><br>
+  <!-- </div> --><br>
 
-  <div class="row">
-    <span class="col-md-12 text-center">
+ <!--  <div class="row"> -->
+    <span class="col-md-8 text-center">
         <%= f.label 'recipe Image:' %>
     </span>
-  </div>
+ <!--  </div> -->
 
   <div class="row">
-    <span class="col-md-12 text-center">
+    <span class="col-md-8 text-center">
       <%= image_tag @recipe.image.url(:small) %>
     </span>
   </div>
   <hr>
 
-  <div class="form-group">
-
+<div class="form-group">
     <div class="row">
-      <span class="col-md-4"></span>
+     
       <span class="col-md-2">
-        <%= f.label :Image %>
+        <%= f.label 'Image:' %>
       </span>
-      <span class="col-md-2 text-center">
+      <span class="col-md-6 text-center">
        <%= f.file_field :image %>
       </span>
-      <span class="col-md-4"></span>
+      
     </div>
     <br>
 
     <div class="row">
-      <span class="col-md-4"></span>
+    
       <span class="col-md-2"> 
         <%= f.label 'Category:' %>
       </span>
-      <span class="col-md-2">   
+      <span class="col-md-1">   
       <%= f.select :category_id, options_from_collection_for_select(Category.all, 'id', 'name') %><span class="not" style="color:red"> *** You must select </span>
       </span>
-      <span class="col-md-4"></span>
+
     </div>
     <br>
 
     <div class="row">
-      <span class="col-md-4"></span>
+      
       <span class="col-md-2">
         <%= f.label 'Recipe Name:' %>
       </span>
-      <span class="col-md-2">
+      <span class="col-md-1">
         <%= f.text_field :title, placeholder: 'Recipe Name' %>
       </span>
-      <span class="col-md-4"></span>
+
     </div>
     <br>
 
     <div class="row">
-      <span class="col-md-4"></span>
+      
       <span class="col-md-2"> 
         <%= f.label 'Ingredients:' %>
       </span>
-      <span class="col-md-2">    
+      <span class="col-md-6">    
         <%= f.text_area :ingredients, placeholder: 'Ingredients' %>
       </span>
-      <span class="col-md-4"></span>
+      
     </div>
     <br>
 
     <div class="row">
-      <span class="col-md-4"></span>
+      
       <span class="col-md-2">
         <%= f.label 'Instructions:' %>
       </span>
-      <span class="col-md-2">
+      <span class="col-md-8">
         <%= f.text_area :instructions, placeholder: 'Instructions' %>
       </span>
-      <span class="col-md-4"></span>
+ 
     </div>
     <br>
    

@@ -4,7 +4,7 @@ class CategoriesController < ApplicationController
   end
 
   def new
-  @category = Category.new
+    @category = Category.new
   end
 
   def create
@@ -14,6 +14,7 @@ class CategoriesController < ApplicationController
 
   def show
     @category = Category.find params[:id]
+    @recipes = Recipe.all
   end
 
   def destroy
