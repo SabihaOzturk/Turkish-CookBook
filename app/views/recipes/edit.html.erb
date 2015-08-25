@@ -1,3 +1,7 @@
+<% if current_user && current_user.admin? %>
+  <%= link_to "EDit", edit_recipe_path %>
+  <% end %>
+
 <div class="input-form">
   <% if @recipe.errors.any? %>
   <ul>

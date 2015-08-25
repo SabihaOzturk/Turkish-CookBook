@@ -27,7 +27,7 @@
     </div><!-- #cat_content -->
  </div><!-- end colm-sm-2 -->  
 
-<div class="col-sm-8 text-center" >
+<div class="col-sm-8 text-center" style="background-color:lavenderblush"; >
 
   <div id="cook_receipes">
 
@@ -38,7 +38,7 @@
 
         <div class="panel panel-primary">
           <h1>Listing Recipes</h1></div>
-        <table class='table'>
+        <table class='table table-hover'>
           <thead>
             <tr>
               <th>Photos</th>
@@ -60,15 +60,21 @@
               <td><%= time_ago_in_words recipe.updated_at %> ago</td>
        
               <td><%= link_to 'Show', recipe %></td>
+              
+
+              <% if current_user && current_user.admin? %>
               <td><%= link_to 'Edit', edit_recipe_path(recipe) %></td>
+
               <td><%= link_to 'Destroy', recipe, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+              <% end %>
             </tr>
           <% end %>
-
         </table>
         <br>
 
+      <% if current_user && current_user.admin? %>
         <%= link_to 'New Recipe', new_recipe_path, :class => "btn btn-danger btn-lg" %>
+      <% end %>
 
       </div> <!-- end .cooking -->
     </div> <!-- end #cook_content -->
