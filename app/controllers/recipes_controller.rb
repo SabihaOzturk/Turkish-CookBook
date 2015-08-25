@@ -32,8 +32,7 @@ class RecipesController < ApplicationController
        redirect_to(recipe_path(params[:id])) and return
      end
      @recipe = Recipe.find params[:id]
-     @categories = Category.all  
-
+     @categories = Category.all
   end
 
   def create

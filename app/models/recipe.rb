@@ -1,6 +1,7 @@
 class Recipe < ActiveRecord::Base
 
   belongs_to :category
+  has_many :comments
 
   validates :image, presence: true
   validates :title, presence: true
