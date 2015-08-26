@@ -4,7 +4,7 @@ class RecipesController < ApplicationController
   def index
     # @recipes = Recipe.all
     @recipes = Recipe.search params[:search]
-    @recipes = Recipe.order(created_at: :desc).paginate(page: params[:page], per_page: 5)
+    @recipes = @recipes.order(created_at: :desc).paginate(page: params[:page], per_page: 5)
     @categories = Category.all
   end
 
