@@ -10,13 +10,15 @@ class RecipesController < ApplicationController
 
   def show
     @recipe = Recipe.find params[:id]
+    @categories = Category.all
+    
     @previous_recipe = Recipe.where('created_at < ?', @recipe.created_at).
                               order(created_at: :desc).
-                              limit(1).first
+                              limit(1).first 
+  
     @next_recipe = Recipe.where('created_at > ?', @recipe.created_at).
                               order(created_at: :asc).
                               limit(1).first
-    @categories = Category.all
   end
 
   def list
