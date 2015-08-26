@@ -23,6 +23,7 @@ class RecipesController < ApplicationController
 
   def list
     @recipes = Recipe.all
+    # @category =@recipe.category.name params[:name]
   end
 
   def new

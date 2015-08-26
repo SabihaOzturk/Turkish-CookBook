@@ -33,7 +33,7 @@
         <%= f.label 'Category:' %>
       </span>
       <span class="col-md-2">   
-      <%= f.select :category_id, options_from_collection_for_select(Category.all, 'id', 'name') %>     
+      <%= f.select :category_id, options_from_collection_for_select(Category.all, 'id', 'name'), :prompt => "Select One" %>     
       </span>
       <span class="col-md-4"></span>
     </div>

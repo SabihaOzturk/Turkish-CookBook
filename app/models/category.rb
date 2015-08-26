@@ -1,4 +1,4 @@
 class Category < ActiveRecord::Base
   # attr_accessible :name
-  has_many :recipe, dependent: :destroy
+  has_many :recipes, dependent: :destroy
 end
