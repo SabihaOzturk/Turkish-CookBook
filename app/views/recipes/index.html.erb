@@ -1,8 +1,8 @@
 <div class="gridcontainer">
      
-  <div class="row">
-    <div class="col-sm-2 text-center">
-
+  
+    <div class="col-md-2 text-center">
+  
       <div id="search">
         <%= form_tag recipes_path, :method => 'get' do %>
         
@@ -12,7 +12,8 @@
         </p>
         <% end %> 
       </div>
-<hr>
+
+    <hr>
 
     <h4 class="category">CATEGORIES</h4><hr>
     
@@ -22,25 +23,27 @@
         
         <li><%= link_to(category.name, category_path(category.id)) %></li>
         <% end %>
-
-      </ul><!-- #categories -->
+      </ul>   
     </div><!-- #cat_content -->
+ 
  </div><!-- end colm-sm-2 -->  
 
-  <div class="col-sm-8 text-center" style="background-color:lavenderblush"; >
-      
+
+  <div class="col-md-8 text-center" style="background-color:#FFF5EC"; >   
     <div class="cooking">
+    <div class="text-center"> 
+      <%= will_paginate @recipes %> </div>
 
       <div class="panel panel-primary">
-        <h1>Listing Recipes</h1></div>
+        <h1>Turkish Kitchen</h1></div>
       <table class='table table-hover'>
         <thead>
           <tr>
-            <th>Photos</th>
-            <th>Category</th>
-            <th>Title</th>
-            <th>Last Updated</th>
-            <th colspan="2">&nbsp;</th>
+            <td><b>Photos</b></td>
+            <td><b>Category</b></td>
+            <td><b>Title</b></td>
+            <td><b>Last Updated</b></td>
+            <td colspan="2">&nbsp;</td>
           </tr>
         </thead>
         <tr>
@@ -54,22 +57,23 @@
             <td><%= link_to h(recipe.title), recipe %></td>
             <td><%= time_ago_in_words recipe.updated_at %> ago</td>
      
-            <td><%= link_to 'Show', recipe %></td>
+            <td><%= link_to 'View', recipe %>
+            <br>
+            Comments :<%= recipe.comments.count %>
+            </td>
             
 
             <% if current_user && current_user.admin? %>
             <td><%= link_to 'Edit', edit_recipe_path(recipe) %></td>
 
             <td><%= link_to 'Destroy', recipe, method: :delete, data: { confirm: 'Are you sure?' } %>
-              <br>
-              Comments:<%= recipe.comments.count %>
             </td>
             <% end %>
           </tr>
         <% end %>
       </table>
           
-     
+     <div class="text-center"> <%= will_paginate @recipes %> </div>
       <br>
 
     <% if current_user && current_user.admin? %>
@@ -79,29 +83,6 @@
     </div> <!-- end .cooking -->
   </div><!-- end colm-sm-8 --> 
 
-  <div class="col-sm-2 text-center" >
-
-    <div id="translation">
-      <h5 class="title">Translate</h5>
-      <div id="google_translate_element"></div>
-      <script type="text/javascript">
-      function googleTranslateElementInit(){
-        new google.translate.TranslateElement({pageLanguage: 'en', layout: google.translate.TranslateElement.FloatPosition.TOP_RIGHT}, 'google_translate_element');
-      }
-      </script>
-      <script type="text/javascript" src="http://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-      <div>
-        <span style="white-space:nowrap">Powered by <a class="goog-logo-link" href="https://translate.google.com" target="_blank"><img src="https://www.google.com/images/logos/google_logo_41.png" width="37px" height="13px" style="padding-right: 3px">Translate</a></span>
-      </div>
-    </div>  
-
-    <br><hr>
-    <div class="fjit">
-      <a href="http://feedjit.com/ir1/06bc5c49faf71594360150785f8758c0/"><img src="http://feedjit.com/b/06bc5c49faf71594360150785f8758c0.png" alt="" border="0" ISMAP /></a>
-    </div>
-  </div><!-- end second-colm-sm-2 --> 
-
-  </div><!-- end row --> 
 </div><!-- end container --> 
 
 

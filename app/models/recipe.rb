@@ -22,4 +22,5 @@ class Recipe < ActiveRecord::Base
       Recipe.all
     end
   end
+
 end
