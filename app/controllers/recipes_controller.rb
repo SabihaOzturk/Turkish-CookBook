@@ -5,6 +5,7 @@ class RecipesController < ApplicationController
     # @recipes = Recipe.all
     @recipes = Recipe.search params[:search]
     @recipes = @recipes.order(created_at: :desc)
+    @recipes = Recipe.paginate(page: params[:page], per_page: 6)
     @categories = Category.all
   end
 
