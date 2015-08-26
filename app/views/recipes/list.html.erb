@@ -1,15 +1,32 @@
-<h1>All Recipes</h1>
+<div class="row">
+  <span class="col-md-4 text-center">
+  <h1>All Recipes</h1></span>
+</div>
+
+<div class="col-md-8 text-center">
   <table border="1">
   <tr>
-  <td width="80%"><p align="center"><i><b>Recipe</b></i></td> 
-   <td width="20%"><p align="center"><i><b>Date</b></i></td>
+    <td width="20%"><p align="center"><i><b>Images</b></i></td> 
+    <td width="20%"><p align="center"><i><b>Category</b></i></td> 
+    <td width="40%"><p align="center"><i><b>Recipe</b></i></td> 
+    <td width="20%"><p align="center"><i><b>Date</b></i></td>
   </tr>
    
+  
   <% @recipes.each do |recipe| %>
-  <tr>
-  <td><%= link_to recipe.title, :action => "show", :id => recipe.id %></td>
-  <td><%= link_to recipe.category.name, :action => "show", :id => category.id %></td>
-  <td><%= recipe.updated_at %></td>
-  </tr>
+    <tr>
+      <td><%= link_to recipe_path recipe do %>
+              <%= image_tag recipe.image.url(:small) %>
+          <% end %>
+      </td>
+      <td><%= recipe.category.name if recipe.category %></td>
+      <td><%= link_to h(recipe.title), recipe %></td>
+      <td><%= time_ago_in_words recipe.updated_at %> ago</td>
+    </tr>
   <% end %> 
   </table>
+</div>
+
+  
+       
+            

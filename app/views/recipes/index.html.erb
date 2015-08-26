@@ -1,14 +1,15 @@
 <div class="gridcontainer">
      
   
-    <div class="col-md-2 text-center">
+    <div class="col-md-2">
   
       <div id="search">
+       <h4>SEARCH FOR:</h4>
         <%= form_tag recipes_path, :method => 'get' do %>
         
         <p> 
-          <%= text_field_tag :search, params[:search] %>
-          <%= submit_tag "Search", :title => nil %>
+          <%= text_field_tag :search, params[:search], :class => "form-control", :placeholder => "Recipe Name" %>
+          <%= submit_tag "Search", :title => nil, :class => "btn btn-primary" %>
         </p>
         <% end %> 
       </div>
@@ -19,7 +20,7 @@
     
     <div id="cat_content">
       <ul id="categories">
-        <% @categories.each do |category| %>
+        <% @categories.order(:name).each do |category| %>
         
         <li><%= link_to(category.name, category_path(category.id)) %></li>
         <% end %>
@@ -57,7 +58,7 @@
             <td><%= link_to h(recipe.title), recipe %></td>
             <td><%= time_ago_in_words recipe.updated_at %> ago</td>
      
-            <td><%= link_to 'View', recipe %>
+            <td><%= link_to 'View', recipe_path(recipe) %>
             <br>
             Comments :<%= recipe.comments.count %>
             </td>
