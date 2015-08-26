@@ -1,6 +1,5 @@
 class CategoriesController < ApplicationController
   def index
-    @categories = Category.order(name: :asc)
     @categories = Category.all
   end
 
@@ -15,7 +14,9 @@ class CategoriesController < ApplicationController
 
   def show
     @category = Category.find params[:id]
-    @recipes = Recipe.all
+    @categories = Category.all
+    @recipes = @category.recipes.order(created_at: :desc).paginate(page: params[:page], per_page: 5)
+    render 'recipes/index'
   end
 
   def destroy

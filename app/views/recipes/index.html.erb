@@ -5,12 +5,13 @@
   
       <div id="search">
        <h4>SEARCH FOR:</h4>
-        <%= form_tag recipes_path, :method => 'get' do %>
+        <%= form_tag recipes_path, :method => 'get', :id => "recipes_search" do %>
         
         <p> 
           <%= text_field_tag :search, params[:search], :class => "form-control", :placeholder => "Recipe Name" %>
           <%= submit_tag "Search", :title => nil, :class => "btn btn-primary" %>
         </p>
+
         <% end %> 
       </div>
 
@@ -76,6 +77,8 @@
           
      <div class="text-center"> <%= will_paginate @recipes %> </div>
       <br>
+
+    <%= link_to 'Recipe List', recipes_path, :class => "btn btn-danger btn-lg" %>
 
     <% if current_user && current_user.admin? %>
       <%= link_to 'New Recipe', new_recipe_path, :class => "btn btn-danger btn-lg" %>

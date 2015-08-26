@@ -46,7 +46,7 @@
         <%= f.label 'Category:' %>
       </span>
       <span class="col-md-6">   
-      <%= f.select :category_id, options_from_collection_for_select(Category.all, 'id', 'name') %><span class="not" style="color:red"> *** You must select </span>
+      <%= f.select :category_id, options_from_collection_for_select(Category.all, 'id', 'name'), :prompt => "Select One" %><span class="not" style="color:red"> *** You must select </span>
       </span>
       <span class="col-md-1"></span>
     </div>
