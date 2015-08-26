@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  
   get 'comments/index'
 
   get 'comments/show'
@@ -27,6 +28,8 @@ Rails.application.routes.draw do
 
    root to: "pages#home"
    get "pages/about"
+
+   resources "contacts", only: [:new, :create]
    
   # map.resources :recipes, :has_many => :comments
   
