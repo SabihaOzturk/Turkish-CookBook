@@ -1,5 +1,20 @@
-<h2>Edit Category</h2>
+<br>
+<div class="row">
+  <span class="col-md-12 text-center title-head">
+    <h1>Edit Category</h1>
+  </span>
+</div>
+<br>
 
-<%= render "form" %>
+<div class="row">
+  <span class="col-md-12 text-center title-head">
+    <%= render "form" %>
+  </span>
+</div>
 
-<%= link_to 'Back', categories_path %>
+<div class="row">
+  <span class="col-md-12 text-center title-head">
+  <%= link_to 'Back to List', categories_path, :class => "btn btn-success btn-md" %>
+  <%= link_to 'Add a Recipe', new_recipe_path(@recipe), :class => "btn btn-primary btn-md" %>
+  </span>
+</div>

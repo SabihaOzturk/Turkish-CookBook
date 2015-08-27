@@ -78,10 +78,11 @@
      <div class="text-center"> <%= will_paginate @recipes %> </div>
       <br>
 
-    <%= link_to 'Back to All List', recipes_path, :class => "btn btn-danger btn-lg" %>
+    <%= link_to 'Back to All List', recipes_path, :class => "btn btn-danger btn-md" %>
 
     <% if current_user && current_user.admin? %>
-      <%= link_to 'New Recipe', new_recipe_path, :class => "btn btn-danger btn-lg" %>
+      <%= link_to 'New Recipe', new_recipe_path, :class => "btn btn-primary btn-md" %>
+      <%= link_to('New Category',new_category_path, :class => "btn btn-success btn-md") %>
     <% end %>
 
     </div> <!-- end .cooking -->
