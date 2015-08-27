@@ -1,7 +1,7 @@
 class CommentsController < ApplicationController
-  before_action :logged_in_user, only: [:index, :edit, :update, :destroy]
-  before_action :correct_user,   only: [:edit, :update]
-  before_action :admin_user,     only: :destroy
+  # before_action :logged_in_user, only: [:index, :edit, :update, :destroy]
+  # before_action :correct_user,   only: [:edit, :update]
+  # before_action :admin_user,     only: :destroy
   
   def index
     @recipe = Recipe.find params[:recipe_id]
@@ -26,9 +26,10 @@ class CommentsController < ApplicationController
     @recipe = Recipe.find params[:recipe_id]
     @comment = @recipe.comments.create comment_params
     if @comment.save
-      flash[:succes] = 'Your comment was successfully added!'
+      flash[:notice] = 'Your comment was successfully added!'
       redirect_to recipe_path(@recipe)
     else
+      flash[:error] = "Comment failed to save"
       render :new
     end
   end
