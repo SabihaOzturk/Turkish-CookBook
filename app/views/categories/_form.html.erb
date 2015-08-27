@@ -10,15 +10,20 @@
       </ul>
     </div>
   <% end %>
-
-  <div class="name">
+<div class="row">
+  <span class="col-md-12 text-center">
     <%= c.label :name %><br />
     <%= c.text_field :name %>
-  </div>
+  </span>
+</div>
 
+<div class="row">
+  <span class="col-md-12 text-center">
   <div class="actions">
-    <%= c.submit %>
+    <%= c.submit :Submit, :class => "btn btn-danger btn-lg" %></span>
   </div>
 <% end %>
+
+</div>
 
   

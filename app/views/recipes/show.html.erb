@@ -93,7 +93,7 @@
         </div>
       </div>
       <div class="text-center">
-        <%= f.submit "Send Message", class: "btn btn-primary" %>
+        <%= f.submit "Send Message", :class =>"btn btn-primary" %>
       </div>
     </div>     
       <% end %>
@@ -101,8 +101,8 @@
 
   <div class="row">
     <span class="col-md-12">
-      <%= link_to 'Back to Home Page', recipes_path %> |
-      <%= link_to 'Manage Comments', recipe_comments_path(@recipe) %></span>
+      <%= link_to 'Back to Home Page', recipes_path, :class =>"btn btn-danger" %> |
+      <%= link_to 'Manage Comments', recipe_comments_path(@recipe), :class =>"btn btn-danger" %></span>
   </div>
   <div class="end">
     <span class="col-md-12"><hr></span>

@@ -28,6 +28,7 @@ class RecipesController < ApplicationController
 
   def new
     @recipe = Recipe.new
+    @category = Category.new
   end
 
   def edit
