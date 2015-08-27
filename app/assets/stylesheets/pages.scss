@@ -53,3 +53,53 @@
 
     margin: 0 auto;
 }
+.nbox{
+  width: 60px;
+  padding: 2px;
+  float: left;
+}
+#middle{
+  width: 70%;
+  margin-left: 7%;
+  /*margin: auto;*/
+  padding: 5px;
+  font-size: 20px;
+  text-align: justify;
+  float: left;
+}
+#aboutimg{
+  width: 100%;
+}
+#clear{
+  clear: both;
+}
+
+#right{
+  width: 20%;
+  min-height: 800px;
+  margin: 2% 1%;
+  padding: 10px;
+  background-color: #ccc;
+  border: 1px solid #434343;
+  float: right;
+}
+#social {
+  position: relative;
+  top: 10px;
+  right: 5px;
+  text-align: center;
+}
+#social a {
+  width: 50px;
+  margin-right: 10px;
+  display: inline-block;
+}
+.media {
+  width: 100%;
+}
+footer{
+  clear: both;
+  margin-top: 20px;
+  font-style: italic;
+  float: right;
+}

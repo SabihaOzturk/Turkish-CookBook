@@ -16,8 +16,8 @@
       </div>
 
     <hr>
-
-    <h4 class="category">CATEGORIES</h4><hr>
+    <span class="text-center">
+    <h4 class="category">CATEGORIES</h4><hr></span>
     
     <div id="cat_content">
       <ul id="categories">
@@ -78,7 +78,7 @@
      <div class="text-center"> <%= will_paginate @recipes %> </div>
       <br>
 
-    <%= link_to 'Recipe List', recipes_path, :class => "btn btn-danger btn-lg" %>
+    <%= link_to 'Back to All List', recipes_path, :class => "btn btn-danger btn-lg" %>
 
     <% if current_user && current_user.admin? %>
       <%= link_to 'New Recipe', new_recipe_path, :class => "btn btn-danger btn-lg" %>
@@ -109,7 +109,12 @@
       <a href="http://feedjit.com/ir1/06bc5c49faf71594360150785f8758c0/"><img src="http://feedjit.com/b/06bc5c49faf71594360150785f8758c0.png" alt="" border="0" ISMAP /></a>
     </div>
   </div><!-- end second-colm-sm-2 -->
-
+  <div>
+    <span class="col-md-12"><hr></span>
+  </div>
+  <div class="end">
+    <span class="col-md-12"><hr></span>
+  </div>
 </div><!-- end container --> 
 
 

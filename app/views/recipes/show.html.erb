@@ -33,7 +33,7 @@
 
 <div class="row">
   <span class="col-md-12 text-center">
-  <%= link_to 'Back', recipes_path, :class => "btn btn-danger btn-lg" %></span>
+  <%= link_to 'Back to List', recipes_path, :class => "btn btn-danger btn-lg" %></span>
 </div>
 
 <% end %>
@@ -58,43 +58,68 @@
 
 <div class="row">
   <div class="col-sm-12 text-center">
+    <!-- <h2>Comments</h2> -->
+      <% @recipe.comments.each do |comment| %>
+        <p>
+          <strong>Commenter:</strong>
+          <%= comment.commenter %>
+          <strong>Comment:</strong>
+          <%= comment.body %>
+        </p>
+      <% end %>
 
-    <h2>Comments</h2>
-    <% @recipe.comments.each do |comment| %>
-      <p>
-        <strong>Commenter:</strong>
-        <%= comment.commenter %>
-      </p>
-     
-      <p>
-        <strong>Comment:</strong>
-        <%= comment.body %>
-      </p>
-    <% end %>
-     
-    <h2>Add a comment:</h2>
-    <%= form_for([@recipe, @recipe.comments.build]) do |f| %>
-      <p>
-        <%= f.label :commenter %><br>
+<div class="row">
+  <div class="col-md-3"></div>
+  
+  <div class="col-md-6">
+    <div class="contacts-container">
+    <span class="text-left">
+    <h3>Add a comment:</h3></span>
+      <%= form_for([@recipe, @recipe.comments.build]) do |f| %>
+      <div class="row">
+        <span class="col-md-4 text-right">
+          <%= f.label :Name %>  </span>
+        <span class="col-md-8 text-left">
         <%= f.text_field :commenter %>
-      </p>
-      <p>
-        <%= f.label :Comment %><br>
-        <%= f.text_area :body %>
-      </p>
-      <p>
-        <%= f.submit %>
-      </p>
-    <% end %>
+        </span>
+      </div><br>
+      <div class="row">
+        <span class="col-md-4 text-right">
+          <%= f.label :Comment %></span>
+        <span class="col-md-8 text-left">
+          <%= f.text_area :body %></span>
+        <div>
+          <span class="col-md-12"><hr></span>
+        </div>
+      </div>
+      <div class="text-center">
+        <%= f.submit "Send Message", class: "btn btn-primary" %>
+      </div>
+    </div>     
+      <% end %>
+  </div>
 
-    <%= link_to 'Back to Home Page', recipes_path %> |
-    <%= link_to 'Manage Comments', recipe_comments_path(@recipe) %>
-
+  <div class="row">
+    <span class="col-md-12">
+      <%= link_to 'Back to Home Page', recipes_path %> |
+      <%= link_to 'Manage Comments', recipe_comments_path(@recipe) %></span>
+  </div>
+  <div class="end">
+    <span class="col-md-12"><hr></span>
   </div>
 </div>
 
-<div class="row">
-  <span class="col-md-6"></span>
-  <span class="col-md-6"></span>
-</div>
+  
+
+    
+
+
+
+
+
+
+       
+       
+
+        
 

@@ -32,9 +32,15 @@
    margin-top: 5%;
 }
 
-
 .title-head {
   font-size: 2em;
   font-weight: bolder;
   text-align: center;
+}
+
+ul.pager{
+  margin: 0 auto;
+}
+.pagend{
+  margin-bottom: 2%;
 }
