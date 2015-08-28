@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
-  
+  devise_for :users
+
   get 'comments/index'
 
   get 'comments/show'
@@ -8,24 +9,14 @@ Rails.application.routes.draw do
 
   get 'comments/edit'
 
-  devise_for :users
-  # get 'categories/new'
-
-  # get 'categories/edit'
-
-  # get 'categories/show'
-
- # resources :recipes 
-
+ 
   resources :recipes do
     resources :comments
      get 'list', :on => :collection 
   end
-  
 
   resources :categories
     
-
    root to: "pages#home"
    get "pages/about"
    get "pages/measure"

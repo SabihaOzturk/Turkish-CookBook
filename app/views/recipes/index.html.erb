@@ -63,7 +63,6 @@
             <br>
             Comments :<%= recipe.comments.count %>
             </td>
-            
 
             <% if current_user && current_user.admin? %>
             <td><%= link_to 'Edit', edit_recipe_path(recipe) %></td>

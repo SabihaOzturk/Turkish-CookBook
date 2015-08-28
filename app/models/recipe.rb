@@ -1,7 +1,7 @@
 class Recipe < ActiveRecord::Base
 
   belongs_to :category
-  has_many :comments
+  has_many :comments, dependent: :destroy
 
   validates :image, presence: true
   validates :title, presence: true
