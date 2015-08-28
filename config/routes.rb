@@ -20,6 +20,7 @@ Rails.application.routes.draw do
    root to: "pages#home"
    get "pages/about"
    get "pages/measure"
+   get "pages/aboutme"
 
    resources "contacts", only: [:new, :create]
    
