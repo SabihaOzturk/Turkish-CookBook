@@ -1,21 +1,31 @@
 
 <h1>Editing comment</h1>
-
-<% form_for([@recipe, @comment]) do |f| %>
-  <%= f.error_messages %>
-
-  <p>
+<div class="row">
+  <span class="col-md-12 text-center">
+<%= form_for([@recipe, @comment]) do |f| %>
+ <p>
     <%= f.label :commenter %><br />
     <%= f.text_area :commenter %>
   </p>
+</span>
+</div>
+  <div class="row">
+  <span class="col-md-12 text-center">
   <p>
     <%= f.label :body %><br />
     <%= f.text_area :body %>
   </p>
-  <p>
-    <%= f.submit "Update" %>
-  </p>
+  </span>
+</div>
+  <div class="row">
+  <span class="col-md-12 text-center">
+  <div class="actions">
+   
+  <%= f.submit :Update, :class => "btn btn-danger btn-lg"%></span>
+  </div>
 <% end %>
+
 
 <%= link_to 'Show', recipe_comment_path(@recipe, @comment) %> |
 <%= link_to 'Back', recipe_comments_path(@recipe) %>
+

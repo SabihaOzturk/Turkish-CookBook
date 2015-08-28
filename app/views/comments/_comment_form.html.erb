@@ -1,14 +1,30 @@
-<h2>Add a comment:</h2>
-<%= form_for ([@recipe, @recipe.comments.build]) do |f| %>
-   <div class="field">
-    <%= f.label :commenter %><br />
-    <%= f.text_field :commenter %>
-   </div>
-   <div class="field">
-    <%= f.label :body %><br />
-    <%= f.text_area :body %>
-   </div>
-   <div class="actions">
-    <%= f.submit %>
-   </div>
-<% end %>
+<div class="row">
+  <div class="col-md-3"></div>
+  
+  <div class="col-md-6">
+    <div class="contacts-container">
+    <span class="text-left">
+    <h3>Add a comment:</h3></span>
+      <%= form_for([@recipe, @comment]) do |f| %>
+      <div class="row">
+        <span class="col-md-4 text-right">
+          <%= f.label :Name %>  </span>
+        <span class="col-md-8 text-left">
+        <%= f.text_field :commenter %>
+        </span>
+      </div><br>
+      <div class="row">
+        <span class="col-md-4 text-right">
+          <%= f.label :Comment %></span>
+        <span class="col-md-8 text-left">
+          <%= f.text_area :body %></span>
+        <div>
+          <span class="col-md-12"><hr></span>
+        </div>
+      </div>
+      <div class="text-center">
+        <%= f.submit "Send Message", :class =>"btn btn-primary" %>
+      </div>
+    </div>     
+      <% end %>
+  </div>

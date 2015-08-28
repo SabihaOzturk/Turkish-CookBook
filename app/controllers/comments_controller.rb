@@ -5,12 +5,12 @@ class CommentsController < ApplicationController
   
   def index
     @recipe = Recipe.find params[:recipe_id]
-    @comment = @recipe.comments.find params[:recipe_id]
+    @comments = @recipe.comments
   end
 
   def show
     @recipe = Recipe.find params[:recipe_id]
-    @comment = @recipe.comments.find params[:recipe_id]
+    @comment = @recipe.comments.find params[:id]
   end
 
   def new
@@ -36,17 +36,19 @@ class CommentsController < ApplicationController
 
   def edit
     @recipe = Recipe.find params[:recipe_id]
-    @comment = @recipe.comments.find params[:recipe_id]
+    @comment = @recipe.comments.find params[:id]
+    @categories = Category.all
   end
 
   def update 
     @recipe = Recipe.find params[:recipe_id]
-    @comment = Comment.find params[:id] 
-    if @comment.update_attributes params[:id] 
+    @comment = @recipe.comments.find params[:id] 
+    if @comment.update_attributes comment_params 
       redirect_to recipe_path(@recipe)
     else
       render :new
     end
+    @categories = Category.all
   end
 
   def destroy
@@ -58,7 +60,7 @@ class CommentsController < ApplicationController
 
   private
     def comment_params
-      params.require(:comment).permit(:commenter, :body )
+      params.require(:comment).permit(:commenter, :body, :recipe_id)
     end
 end
 
