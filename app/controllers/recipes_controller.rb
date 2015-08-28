@@ -29,6 +29,7 @@ class RecipesController < ApplicationController
   def new
     @recipe = Recipe.new
     @category = Category.new
+    @categories = Category.all
   end
 
   def edit
@@ -50,6 +51,7 @@ class RecipesController < ApplicationController
        flash[:alert] = "There was an error with adding the recipe"
        render :new
      end
+     @categories = Category.all
   end
 
   def update

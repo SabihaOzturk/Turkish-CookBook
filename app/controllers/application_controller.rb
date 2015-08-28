@@ -8,6 +8,12 @@ class ApplicationController < ActionController::Base
   # before_action :correct_user,   only: [:edit, :update]
   # before_action :admin_user,     only: :destroy
 
+  def index
+    @categories = Category.all
+  end
+  def show
+    @categories = Category.all
+  end
 
   private
 
