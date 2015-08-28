@@ -13,6 +13,7 @@
   <%= csrf_meta_tags %>
 
 <body>
+
 <div class="flash">
   <% if flash[:notice] %>
     <div class="notice">
@@ -29,8 +30,12 @@
 
 <%= render 'layouts/navbar' %>
 
+<div id = "container">
+
 
 <%= yield %>
+
+</div>
 
  
 </body>
