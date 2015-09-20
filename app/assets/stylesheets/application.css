@@ -42,10 +42,32 @@
   width: 95%;
   margin: 0 auto;
 }
+.flash {
+  margin-top:0;
+  padding-top: 0px 4px 4px;
+  text-align: center;
+  font-size: 1.3em;
+  color:red;
+}
 
+.notice {
+  background: red;
+  color: white;
+}
 ul.pager{
   margin: 0 auto;
 }
-.pagend{
-  margin-bottom: 2%;
+.end{
+  margin-top: 1%;
 }
+.goog-te-gadget-simple{
+  width: 180px;
+  height: 30px;
+}
+footer{
+  clear: both;
+  margin-top: 80px;
+  font-style: italic;
+  float: right;
+}
+
