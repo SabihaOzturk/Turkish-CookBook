@@ -50,12 +50,11 @@
 
 .carousel-inner >.item >img {
     width: 35%;
-
     margin: 0 auto;
 }
 .nbox{
   width: 50%;
-  padding: 2px;
+  padding: 8px;
   float: left;
 }
 #middle{
@@ -85,20 +84,36 @@
 #social {
   position: relative;
   top: 10px;
-  right: 5px;
+  right: -5px;
   text-align: center;
 }
-#social a {
+#social> a {
   width: 50px;
   margin-right: 10px;
   display: inline-block;
 }
+#social> a:hover {
+  opacity: 0.4;
+}
 .media {
   width: 100%;
 }
-footer{
-  clear: both;
-  margin-top: 20px;
-  font-style: italic;
-  float: right;
+
+.me {
+  border-radius: 50%;
+  width: 100%;
 }
+
+#bio{
+  width: 80%;
+  margin: auto;
+}
+
+.bios{
+  padding: 15px;
+  display: inline-block;
+  float: left;
+  margin-top: 10%;
+  margin-left: 10%; 
+}
+
