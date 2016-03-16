@@ -1,0 +1,362 @@
+/* line 5, /Users/sabihaozturk/Desktop/WDI/PRO2/CBook/app/assets/stylesheets/contacts.scss */
+.contacts-container {
+  border: 3px solid black;
+  border-radius: 10px;
+  padding: 15px;
+  margin-top: 5%;
+}
+
+/* line 12, /Users/sabihaozturk/Desktop/WDI/PRO2/CBook/app/assets/stylesheets/contacts.scss */
+textarea#contact_message {
+  width: 90%;
+  height: 200px;
+  padding: 10px;
+}
+
+/* line 17, /Users/sabihaozturk/Desktop/WDI/PRO2/CBook/app/assets/stylesheets/contacts.scss */
+input#contact_name {
+  width: 60%;
+  margin-bottom: 3%;
+}
+
+/* line 21, /Users/sabihaozturk/Desktop/WDI/PRO2/CBook/app/assets/stylesheets/contacts.scss */
+input#contact_email {
+  width: 60%;
+}
+/* line 4, /Users/sabihaozturk/Desktop/WDI/PRO2/CBook/app/assets/stylesheets/pages.scss */
+.landing-page {
+  margin: 0;
+  padding: 0;
+  /*cursor:url(tinkerbell.png), auto;*/
+  background: url(turkkahve.jpg) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  height: 1200px;
+}
+
+/* line 16, /Users/sabihaozturk/Desktop/WDI/PRO2/CBook/app/assets/stylesheets/pages.scss */
+.welcome-button {
+  margin-top: 5%;
+  margin-left: 50%;
+}
+
+/* line 21, /Users/sabihaozturk/Desktop/WDI/PRO2/CBook/app/assets/stylesheets/pages.scss */
+.wel {
+  margin: auto;
+  z-index: 1;
+  color: #fff;
+  font-family: 'Gloria Hallelujah', cursive;
+  font-size: 50px;
+  text-align: center;
+  padding-top: 50px;
+}
+
+/* line 30, /Users/sabihaozturk/Desktop/WDI/PRO2/CBook/app/assets/stylesheets/pages.scss */
+.wel > span {
+  font-family: 'Lobster Two', cursive;
+  font-size: 76px;
+  color: #FFE50C;
+  text-shadow: 4px 4px 4px #CCCCCC;
+}
+
+/* line 37, /Users/sabihaozturk/Desktop/WDI/PRO2/CBook/app/assets/stylesheets/pages.scss */
+.wel2 {
+  color: #fff;
+  font-size: 36px;
+  margin-left: 10%;
+  margin-top: 10%;
+  /*text-align: center;*/
+}
+
+/* line 45, /Users/sabihaozturk/Desktop/WDI/PRO2/CBook/app/assets/stylesheets/pages.scss */
+.carousel-inner .item {
+  overflow: hidden;
+  max-width: 100%;
+  margin: 0;
+}
+
+/* line 51, /Users/sabihaozturk/Desktop/WDI/PRO2/CBook/app/assets/stylesheets/pages.scss */
+.carousel-inner > .item > img {
+  width: 35%;
+  margin: 0 auto;
+}
+
+/* line 55, /Users/sabihaozturk/Desktop/WDI/PRO2/CBook/app/assets/stylesheets/pages.scss */
+.nbox {
+  width: 50%;
+  padding: 8px;
+  float: left;
+}
+
+/* line 60, /Users/sabihaozturk/Desktop/WDI/PRO2/CBook/app/assets/stylesheets/pages.scss */
+#middle {
+  width: 70%;
+  margin-left: 7%;
+  /*margin: auto;*/
+  padding: 5px;
+  font-size: 20px;
+  text-align: justify;
+  float: left;
+}
+
+/* line 69, /Users/sabihaozturk/Desktop/WDI/PRO2/CBook/app/assets/stylesheets/pages.scss */
+#aboutimg {
+  width: 100%;
+}
+
+/* line 72, /Users/sabihaozturk/Desktop/WDI/PRO2/CBook/app/assets/stylesheets/pages.scss */
+#clear {
+  clear: both;
+}
+
+/* line 76, /Users/sabihaozturk/Desktop/WDI/PRO2/CBook/app/assets/stylesheets/pages.scss */
+#right {
+  width: 20%;
+  margin: 2% 1%;
+  padding: 10px;
+  background-color: #ccc;
+  border: 1px solid #434343;
+  float: right;
+}
+
+/* line 84, /Users/sabihaozturk/Desktop/WDI/PRO2/CBook/app/assets/stylesheets/pages.scss */
+#social {
+  position: relative;
+  top: 10px;
+  right: -5px;
+  text-align: center;
+}
+
+/* line 90, /Users/sabihaozturk/Desktop/WDI/PRO2/CBook/app/assets/stylesheets/pages.scss */
+#social > a {
+  width: 50px;
+  margin-right: 10px;
+  display: inline-block;
+}
+
+/* line 95, /Users/sabihaozturk/Desktop/WDI/PRO2/CBook/app/assets/stylesheets/pages.scss */
+#social > a:hover {
+  opacity: 0.4;
+}
+
+/* line 98, /Users/sabihaozturk/Desktop/WDI/PRO2/CBook/app/assets/stylesheets/pages.scss */
+.media {
+  width: 100%;
+}
+
+/* line 102, /Users/sabihaozturk/Desktop/WDI/PRO2/CBook/app/assets/stylesheets/pages.scss */
+.me {
+  border-radius: 50%;
+  width: 100%;
+}
+
+/* line 107, /Users/sabihaozturk/Desktop/WDI/PRO2/CBook/app/assets/stylesheets/pages.scss */
+#bio {
+  width: 80%;
+  margin: auto;
+}
+
+/* line 112, /Users/sabihaozturk/Desktop/WDI/PRO2/CBook/app/assets/stylesheets/pages.scss */
+.bios {
+  padding: 15px;
+  display: inline-block;
+  float: left;
+  margin-top: 10%;
+  margin-left: 10%;
+}
+/* line 6, /Users/sabihaozturk/Desktop/WDI/PRO2/CBook/app/assets/stylesheets/recipes.scss */
+.cooking th, td {
+  padding: 10px;
+}
+
+/* line 9, /Users/sabihaozturk/Desktop/WDI/PRO2/CBook/app/assets/stylesheets/recipes.scss */
+#recipe_ingredients {
+  width: 100%;
+  height: 200px;
+  padding: 5px;
+  text-align: center;
+}
+
+/* line 15, /Users/sabihaozturk/Desktop/WDI/PRO2/CBook/app/assets/stylesheets/recipes.scss */
+#recipe_instructions {
+  width: 100%;
+  height: 200px;
+  padding: 5px;
+  text-align: justify;
+}
+
+/* line 22, /Users/sabihaozturk/Desktop/WDI/PRO2/CBook/app/assets/stylesheets/recipes.scss */
+#search {
+  margin-top: 4%;
+}
+
+/* line 25, /Users/sabihaozturk/Desktop/WDI/PRO2/CBook/app/assets/stylesheets/recipes.scss */
+#categories {
+  list-style: none;
+}
+
+/* line 28, /Users/sabihaozturk/Desktop/WDI/PRO2/CBook/app/assets/stylesheets/recipes.scss */
+.pager > li > a {
+  color: #fff;
+  background-color: #d9534f;
+}
+
+/* line 32, /Users/sabihaozturk/Desktop/WDI/PRO2/CBook/app/assets/stylesheets/recipes.scss */
+.pager > li > a:hover {
+  border-color: #d43f3a;
+  color: #000;
+}
+/*body {
+  background-color: #fff;
+  color: #333;
+  font-family: verdana, arial, helvetica, sans-serif;
+  font-size: 13px;
+  line-height: 18px;
+  margin-left: 5%;
+}
+
+p, ol, ul, td {
+  font-family: verdana, arial, helvetica, sans-serif;
+  font-size: 13px;
+  line-height: 18px;
+}
+th{
+  padding: 20px;
+}
+pre {
+  background-color: #eee;
+  padding: 10px;
+  font-size: 11px;
+}
+
+a {
+  color: #000;
+
+  &:visited {
+    color: #666;
+  }
+
+  &:hover {
+    color: #fff;
+    background-color: #000;
+  }
+}
+
+div {
+  &.field, &.actions {
+    margin-bottom: 10px;
+
+  }
+}
+
+#notice {
+  color: green;
+}
+
+.field_with_errors {
+  padding: 2px;
+  background-color: red;
+  display: table;
+}
+
+#error_explanation {
+  width: 450px;
+  border: 2px solid red;
+  padding: 7px;
+  padding-bottom: 0;
+  margin-bottom: 20px;
+  background-color: #f0f0f0;
+
+  h2 {
+    text-align: left;
+    font-weight: bold;
+    padding: 5px 5px 5px 15px;
+    font-size: 12px;
+    margin: -7px;
+    margin-bottom: 0px;
+    background-color: #c00;
+    color: #fff;
+  }
+
+  ul li {
+    font-size: 12px;
+    list-style: square;
+  }
+}
+*/
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+
+
+ */
+
+
+.navbar-inverse .navbar-brand{
+  font-family: 'Lobster Two', cursive;
+  font-size: 36px;
+  color:#FFE50C;
+  /*text-shadow: 3px 3px 3px #CCCCCC;*/
+}
+.navbar{
+  margin-bottom: 0px;
+  border-radius: 0px;
+}
+
+.login-container {
+  padding: 30px;
+  border: 3px solid black;
+  border-radius: 10px;
+   margin-top: 5%;
+}
+
+.title-head {
+  font-size: 2em;
+  font-weight: bolder;
+  text-align: center;
+}
+
+#container {
+  width: 95%;
+  margin: 0 auto;
+}
+.flash {
+  margin-top:0;
+  padding-top: 0px 4px 4px;
+  text-align: center;
+  font-size: 1.3em;
+  color:red;
+}
+
+.notice {
+  background: red;
+  color: white;
+}
+ul.pager{
+  margin: 0 auto;
+}
+.end{
+  margin-top: 1%;
+}
+.goog-te-gadget-simple{
+  width: 180px;
+  height: 30px;
+}
+footer{
+  clear: both;
+  margin-top: 80px;
+  font-style: italic;
+  float: right;
+}
+
